@@ -11,7 +11,7 @@ class Traits(models.Model):
 	strength = models.IntegerField(default=0)
 
 	def get_fields(self):
-		return [(field.name, field.value_to_string(self)) for field in Traits._meta.fields]
+		return [(field.name, field.value_to_string(self)) for field in Traits._meta.fields[1:]]
 
 class Character(models.Model):
 	name = models.CharField(max_length=200)
