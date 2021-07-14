@@ -15,4 +15,7 @@ class Traits(models.Model):
 
 class Character(models.Model):
 	name = models.CharField(max_length=200)
+	race = models.CharField(max_length=200, blank=True, null=True)
+	culture = models.CharField(max_length=200, blank=True, null=True)
+	archetype = models.CharField(max_length=200, blank=True, null=True)
 	traits = models.ForeignKey(Traits, on_delete=models.CASCADE, blank=True, null=True)
